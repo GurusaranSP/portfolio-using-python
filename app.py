@@ -6,12 +6,12 @@ st.set_page_config(page_title="Your Name - Student Portfolio", layout="wide")
 
 class MultiApp:
     def __init__(self):
-        self.apps = []
+        self.apps: list[dict[str, str | callable]] = []
 
-    def add_app(self, title, func):
+    def add_app(self, title: str, func: callable) -> None:
         self.apps.append({"title": title, "function": func})
 
-    def run(self):
+    def run(self) -> None:
         with st.sidebar:
             app = option_menu(
                 menu_title="Navigation",
@@ -27,15 +27,16 @@ class MultiApp:
                 }
             )
 
-        if app == "Home":
-            home.app()
-        elif app == "About":
-            about.app()
-        elif app == "Projects":
-            projects.app()
-        elif app == "Contact":
-            contact.app()
+        match app:
+            case "Home":
+                home.app()
+            case "About":
+                about.app()
+            case "Projects":
+                projects.app()
+            case "Contact":
+                contact.app()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
-    mu
+    multi_app.run()
