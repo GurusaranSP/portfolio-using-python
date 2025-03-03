@@ -15,9 +15,3 @@ with open("config.toml", "w") as file:
 
 print("config.toml file has been created successfully.")
 
-import tomllib
-
-with open("config.toml", "rb") as file:
-    config_data = tomllib.load(file)
-
-print(config_data)
