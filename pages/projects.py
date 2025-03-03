@@ -20,10 +20,9 @@ def app():
     ]
     
     for project in projects:
-        st.write(f"## {project['title']}")
+        st.header(project['title'], level=2)
         st.write(project['description'])
         st.write("**Technologies used:**")
-        for tech in project['technologies']:
-            st.write(f"- {tech}")
-        st.write(f"[View on GitHub]({project['github_link']})")
-        st.write("---")
+        st.markdown("\n".join(f"- {tech}" for tech in project['technologies']))
+        st.markdown(f"[View on GitHub]({project['github_link']})")
+        st.markdown("---")
