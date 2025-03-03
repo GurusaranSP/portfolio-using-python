@@ -1,6 +1,16 @@
-[theme]
-primaryColor = "#0083B8"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F2F6"
-textColor = "#31333F"
-font = "sans serif"
+import toml
+
+config_data = {
+    "theme": {
+        "primaryColor": "#0083B8",
+        "backgroundColor": "#FFFFFF",
+        "secondaryBackgroundColor": "#F0F2F6",
+        "textColor": "#31333F",
+        "font": "sans serif"
+    }
+}
+
+with open("config.toml", "w") as file:
+    toml.dump(config_data, file)
+
+print("config.toml file has been created successfully.")
