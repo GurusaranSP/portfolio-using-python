@@ -3,20 +3,20 @@ import streamlit as st
 def app():
     st.title("About Me")
     
-    st.write("## Education")
-    st.write("🎓 Bachelor's in [Your Major], [Your University], Expected Graduation: [Year]")
+    st.markdown("## Education")
+    st.markdown("🎓 Bachelor's in [Your Major], [Your University], Expected Graduation: [Year]")
     
-    st.write("## Skills")
+    st.markdown("## Skills")
     skills = ["Python", "Data Analysis", "Machine Learning", "Web Development", "Git"]
-    for skill in skills:
-        st.write(f"- {skill}")
+    st.markdown("\n".join(f"- {skill}" for skill in skills))
     
-    st.write("## Coursework")
+    st.markdown("## Coursework")
     courses = ["Introduction to Computer Science", "Data Structures and Algorithms", "Database Systems", "Artificial Intelligence"]
-    for course in courses:
-        st.write(f"- {course}")
+    st.markdown("\n".join(f"- {course}" for course in courses))
     
-    st.write("## Extracurricular Activities")
+    st.markdown("## Extracurricular Activities")
     activities = ["Member of Computer Science Club", "Volunteer at local coding bootcamp for high school students"]
-    for activity in activities:
-        st.write(f"- {activity}")
+    st.markdown("\n".join(f"- {activity}" for activity in activities))
+
+if __name__ == "__main__":
+    app()
