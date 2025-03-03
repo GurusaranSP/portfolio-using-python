@@ -20,9 +20,12 @@ def app():
     ]
     
     for project in projects:
-        st.header(project['title'], level=2)
+        st.subheader(project['title'])
         st.write(project['description'])
         st.write("**Technologies used:**")
         st.markdown("\n".join(f"- {tech}" for tech in project['technologies']))
         st.markdown(f"[View on GitHub]({project['github_link']})")
-        st.markdown("---")
+        st.divider()
+
+if __name__ == "__main__":
+    app()
