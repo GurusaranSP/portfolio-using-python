@@ -21,12 +21,12 @@ class MultiApp:
                 default_index=0,
                 styles={
                     "container": {"padding": "5!important", "background-color": "#f0f2f6"},
-                    "icon": {"color": "#0083B8", "font-size": "25px"}, 
+                    "icon": {"color": "#0083B8", "font-size": "25px"},
                     "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#e1e1e1"},
                     "nav-link-selected": {"background-color": "#0083B8"},
                 }
             )
-
+        
         match app:
             case "Home":
                 home.app()
@@ -38,5 +38,4 @@ class MultiApp:
                 contact.app()
 
 if __name__ == "__main__":
-    multi_app = MultiApp()
-    multi_app.run()
+    MultiApp().run()
